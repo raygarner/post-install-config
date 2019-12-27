@@ -38,8 +38,9 @@ cd /home/ray/.ssh
 ssh-add id_rsa
 echo "Generating copy key script..."
 echo "#!/bin/sh" > copy.sh
-echo "xclip -sel clip < ~/.ssh/id_rsa.pub" >> copy.sh
+echo "xclip -sel clip < id_rsa.pub" >> copy.sh
 chmod +x copy.sh
+cd /home/ray
 
 #download wallpaper
 echo "Downloading wallpaper..."
