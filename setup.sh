@@ -69,4 +69,7 @@ make
 sudo make install
 cd /home/ray
 
+#cmus colours
+echo "type ':colourscheme gruvbox' in cmus to set colours"
+
 echo "End of script."
