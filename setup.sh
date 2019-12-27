@@ -30,6 +30,16 @@ mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vi
 echo "Adding git account details..."
 git config --global user.email "ray@perfectcast.co.uk"
 git config --global user.name "Ray Garner"
+echo "Generating ssh key..."
+ssh-keygen -t rsa -b 4096 -C "ray@perfectcast.co.uk"
+eval "$(ssh-agent -s)"
+echo "Adding ssh key to agent..."
+cd /home/ray/.ssh
+ssh-add id_rsa
+echo "Generating copy key script..."
+echo "#!/bin/sh" > copy.sh
+echo "xclip -sel clip < ~/.ssh/id_rsa.pub" >> copy.sh
+chmod +x copy.sh
 
 #download wallpaper
 echo "Downloading wallpaper..."
