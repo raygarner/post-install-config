@@ -18,7 +18,7 @@ su ray
 cd /home/ray
 
 #create dirs
-mkdir pics pics/screenshots pics/papes vids vids/films programming music docs builds
+mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music programming music docs builds
 
 #set up git
 git config --global user.email "ray@perfectcast.co.uk"
@@ -38,8 +38,8 @@ sudo make install
 cd ..
 
 #download and build st
-git clone https://github.com/raygarner/st.git
-cd st
+git clone https://github.com/raygarner/rays_st.git
+cd rays_st
 make
 sudo make install
 cd ..
