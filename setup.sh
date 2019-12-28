@@ -2,7 +2,7 @@
 
 #install packages
 echo "Installing packages..."
-pacman -S zathura zathura-pdf-mupdf cmus make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pavucontrol pulseaudio compton acpi git xorg-init xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel kolourpaint neofetch xclip openssh
+pacman -S zathura zathura-pdf-mupdf cmus make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pavucontrol pulseaudio compton acpi git xorg-init xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel kolourpaint neofetch xclip openssh unzip
 
 #set keyboard layout
 echo "Setting keyboard layout to gb..."
