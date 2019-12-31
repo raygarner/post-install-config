@@ -1,8 +1,12 @@
 #/bin/sh
 
+#update
+echo "updating..."
+pacman -Syu
+
 #install packages
 echo "Installing packages..."
-pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-init xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel kolourpaint neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc
+pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-init xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel kolourpaint neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc audacity musescore
 
 #set keyboard layout
 echo "Setting keyboard layout to gb..."
