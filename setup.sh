@@ -1,5 +1,9 @@
 #bin/sh
 
+#requirements: 
+#user created with sudo privs and script be in their home
+#internet connection
+
 #pactstrap note:
 #pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
 
@@ -10,7 +14,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore ardour gimp
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore ardour gimp
 
 #nvidia note:
 #pacman -S nvidia-390xx
