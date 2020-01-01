@@ -18,16 +18,6 @@ sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xini
 echo "Setting keyboard layout to gb..."
 sudo localectl --no-convert set-x11-keymap gb
 
-#add user
-#echo "Adding user..."
-#useradd ray
-#passwd ray
-#usermod -aG wheel ray
-
-#switch to new user
-#echo "Switching to new user..."
-#su ray
-
 #cd to home dir
 echo "Moving to /home/ray"
 cd /home/ray
@@ -54,13 +44,11 @@ cd /home/ray
 
 #download wallpaper
 echo "Downloading wallpaper..."
-cd /home/ray/pics/papes
-git clone https://github.com/raygarner/wallpaper.git . 
-cd /home/ray
+git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/ 
 
 #download dotfiles
 echo "Downloading dotfiles..."
-git clone https://github.com/raygarner/dotfiles.git .
+git clone https://github.com/raygarner/dotfiles.git dotfiles
 
 #download and build dwm
 echo "Downloading dwm..."
@@ -82,3 +70,4 @@ sudo make install
 cd /home/ray
 
 echo "End of script."
+echo "Move dotfiles to home if you want them to take effect."
