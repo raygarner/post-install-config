@@ -3,21 +3,16 @@
 #requirements: 
 #user created with sudo privs and script be in their home
 #internet connection
+#graphics drivers
 
 #pactstrap note:
 #pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
 
 
-#update
-#echo "updating..."
-#pacman -Syu
-
 #install packages
 echo "Installing packages..."
 sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore ardour gimp
 
-#nvidia note:
-#pacman -S nvidia-390xx
 
 #set keyboard layout
 echo "Setting keyboard layout to gb..."
@@ -59,7 +54,9 @@ cd /home/ray
 
 #download wallpaper
 echo "Downloading wallpaper..."
-git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes
+cd /home/ray/pics/papes
+git clone https://github.com/raygarner/wallpaper.git . 
+cd /home/ray
 
 #download dotfiles
 echo "Downloading dotfiles..."
