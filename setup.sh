@@ -10,27 +10,27 @@
 
 #install packages
 echo "Installing packages..."
-pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore ardour gimp
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore ardour gimp
 
 #nvidia note:
 #pacman -S nvidia-390xx
 
 #set keyboard layout
 echo "Setting keyboard layout to gb..."
-localectl --no-convert set-x11-keymap gb
+sudo localectl --no-convert set-x11-keymap gb
 
 #add user
-echo "Adding user..."
-useradd ray
-passwd ray
-usermod -aG wheel ray
+#echo "Adding user..."
+#useradd ray
+#passwd ray
+#usermod -aG wheel ray
 
 #switch to new user
-echo "Switching to new user..."
-su ray
+#echo "Switching to new user..."
+#su ray
 
 #cd to home dir
-echo "Moving to new user home dir..."
+echo "Moving to /home/ray"
 cd /home/ray
 
 #create dirs
