@@ -1,5 +1,8 @@
 #bin/sh
 
+#pactstrap note:
+#pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
+
 #update
 echo "updating..."
 pacman -Syu
