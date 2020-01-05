@@ -76,7 +76,26 @@ echo "Building slock..."
 cd rays_slock
 make
 sudo make install
+cd /home/ray/builds
+
+#download and build farbfeld
+echo "Downloading farbeld..."
+git clone https://git.suckless.org/farbfeld
+echo "Building farbfeld..."
+cd farbfeld
+make
+sudo make install
+cd /home/ray/builds
+
+#download and build sent
+echo "Downloading sent..."
+git clone https://github.com/raygarner/rays_sent.git 
+echo "Building sent..."
+cd rays_sent
+make
+sudo make install
 cd /home/ray
+
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
