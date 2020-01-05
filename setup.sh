@@ -67,7 +67,17 @@ echo "Building st..."
 cd rays_st
 make
 sudo make install
+cd /home/ray/builds
+
+#download and build slock
+echo "Downloading slock..."
+git clone https://github.com/raygarner/rays_slock.git
+echo "Building slock..."
+cd rays_slock
+make
+sudo make install
 cd /home/ray
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
+echo "You should now reboot."
