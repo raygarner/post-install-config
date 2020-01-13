@@ -94,8 +94,19 @@ echo "Building sent..."
 cd rays_sent
 make
 sudo make install
-cd /home/ray
+cd /home/ray/builds
 
+#download and build scid
+git clone https://aur.archlinux.org/scid.git
+cd scid
+makepkg -si
+cd /home/ray/builds
+
+#download and builds stockfish
+git clone https://aur.archlinux.org/stockfish.git
+cd stockfish
+makepkg -si
+cd /home/ray
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
