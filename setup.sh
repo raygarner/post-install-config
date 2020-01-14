@@ -1,9 +1,9 @@
-#bin/sh
+#!bin/sh
 
 #requirements: 
 #user created with sudo privs and script be in their home
 #internet connection
-#graphics drivers
+#GRAPHICS DRIVERS
 
 #pactstrap note:
 #pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang
+sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang
 
 
 #set keyboard layout
@@ -113,6 +113,12 @@ git clone https://aur.archlinux.org/brave-bin.git
 cd brave-bin
 makepkg -si
 cd /home/ray
+
+#download and build citrix
+
+
+#download and build vmware-horizon
+
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
