@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit firefox redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang
 
 
 #set keyboard layout
@@ -105,6 +105,12 @@ cd /home/ray/builds
 #download and builds stockfish
 git clone https://aur.archlinux.org/stockfish.git
 cd stockfish
+makepkg -si
+cd /home/ray
+
+#download and build brave
+git clone https://aur.archlinux.org/brave-bin.git
+cd brave-bin
 makepkg -si
 cd /home/ray
 
