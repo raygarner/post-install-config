@@ -119,6 +119,9 @@ cd /home/ray
 
 #download and build vmware-horizon
 
+#start and enable dhcpcd
+sudo systemctl enable dhcpcd.service
+sudo systemctl start dhcpcd.service
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
