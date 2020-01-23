@@ -118,11 +118,25 @@ git clone https://aur.archlinux.org/brave-bin.git
 echo "Building brave..."
 cd brave-bin
 makepkg -si
-cd /home/ray
+cd /home/ray/builds
 
 #download and build citrix
 
+
 #download and build vmware-horizon
+echo "Downloading vmware-keymaps..."
+git clone https://aur.archlinux.org/vmware-keymaps.git
+echo "Building vmware-keymaps..."
+cd vmware-keymaps
+makepkg -si
+cd /home/ray/builds
+echo "Downloading vmware-horizon-client..."
+git clone https://aur.archlinux.org/vmware-horizon-client.git
+echo "Building vmware-horizon-client..."
+cd vmware-horizon-client
+makepkg -si
+cd /home/ray
+
 
 #start and enable dhcpcd
 echo "Starting dhcpcd module..."
