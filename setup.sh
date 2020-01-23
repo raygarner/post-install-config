@@ -97,30 +97,37 @@ sudo make install
 cd /home/ray/builds
 
 #download and build scid
+echo "Downloading scid..."
 git clone https://aur.archlinux.org/scid.git
+echo "Building scid..."
 cd scid
 makepkg -si
 cd /home/ray/builds
 
 #download and builds stockfish
+echo "Downloading stockfish..."
 git clone https://aur.archlinux.org/stockfish.git
+echo "Building stockfish..."
 cd stockfish
 makepkg -si
 cd /home/ray
 
 #download and build brave
+echo "Downloading brave..."
 git clone https://aur.archlinux.org/brave-bin.git
+echo "Building brave..."
 cd brave-bin
 makepkg -si
 cd /home/ray
 
 #download and build citrix
 
-
 #download and build vmware-horizon
 
 #start and enable dhcpcd
+echo "Starting dhcpcd module..."
 sudo systemctl enable dhcpcd.service
+echo "Enabling dhcpcd module..."
 sudo systemctl start dhcpcd.service
 
 echo "End of script."
