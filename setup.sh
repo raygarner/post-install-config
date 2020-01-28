@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang discord
+sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc musescore gimp unnrar pro-audio texlive-most texlive-lang discord jdk11-openjdk jre11-openjdk
 
 
 #set keyboard layout
@@ -157,6 +157,9 @@ echo "Starting dhcpcd module..."
 sudo systemctl enable dhcpcd.service
 echo "Enabling dhcpcd module..."
 sudo systemctl start dhcpcd.service
+
+#set jdk as env for java
+sudo archlinux-java set java-11-openjdk
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
