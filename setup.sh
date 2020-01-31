@@ -24,7 +24,7 @@ cd /home/ray
 
 #create dirs
 echo "Creating dirs in new user home..."
-mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music scripts music docs builds Downloads
+mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music scripts music Documents builds Downloads
 
 #set up git
 echo "Adding git account details..."
