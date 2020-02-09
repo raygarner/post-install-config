@@ -96,21 +96,33 @@ make
 sudo make install
 cd /home/ray/builds
 
-#download and build scid
-echo "Downloading scid..."
-git clone https://aur.archlinux.org/scid.git
-echo "Building scid..."
-cd scid
+#download and build yay
+echo "Downloading yay..."
+git clone https://aur.archlinux.org/yay.git
+echo "Building yay..."
+cd yay
 makepkg -si
 cd /home/ray/builds
 
+#download and build scid
+#echo "Downloading scid..."
+#git clone https://aur.archlinux.org/scid.git
+#echo "Building scid..."
+#cd scid
+#makepkg -si
+#cd /home/ray/builds
+echo "Installing scid..."
+sudo yay scid
+
 #download and builds stockfish
-echo "Downloading stockfish..."
-git clone https://aur.archlinux.org/stockfish.git
-echo "Building stockfish..."
-cd stockfish
-makepkg -si
-cd /home/ray
+#echo "Downloading stockfish..."
+#git clone https://aur.archlinux.org/stockfish.git
+#echo "Building stockfish..."
+#cd stockfish
+#makepkg -si
+#cd /home/ray
+echo "Installing stockfish..."
+sudo yay stockfish
 
 #download and build brave
 echo "Downloading brave..."
