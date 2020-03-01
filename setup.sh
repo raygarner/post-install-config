@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh sxiv mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils
+sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh sxiv mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth
 
 
 #set keyboard layout
@@ -171,6 +171,18 @@ echo "Starting dhcpcd module..."
 sudo systemctl enable dhcpcd.service
 echo "Enabling dhcpcd module..."
 sudo systemctl start dhcpcd.service
+
+#start and enable bluetooth service
+echo "Enabling bluetooth.service..."
+sudo systemctl enable bluetooth.service
+echo "Starting bluetooth.service..."
+sudo systemctl start bluetooth.service
+
+#bluetooth conf stuff
+echo "Configuring pulseaudio for bluetooth compatability..."
+sudo echo "" >> /etc/pulse/system.pa
+echo "load-module module-bluetooth-policy" >> /etc/pulse/system.pa
+echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 
 #set jdk as env for java
 #sudo archlinux-java set java-11-openjdk
