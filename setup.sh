@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord jdk11-openjdk jre11-openjdk eclipse-java eclipse-ecj octave pandoc dosfstools nano alsa-utils
+sudo pacman -S firefox zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl feh sxiv mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils
 
 
 #set keyboard layout
@@ -125,12 +125,14 @@ echo "Installing stockfish..."
 sudo yay stockfish
 
 #download and build brave
-echo "Downloading brave..."
-git clone https://aur.archlinux.org/brave-bin.git
-echo "Building brave..."
-cd brave-bin
-makepkg -si
-cd /home/ray/builds
+#echo "Downloading brave..."
+#git clone https://aur.archlinux.org/brave-bin.git
+#echo "Building brave..."
+#cd brave-bin
+#makepkg -si
+#cd /home/ray/builds
+echo "Installing brave..."
+sudo yay brave-bin
 
 #download and build citrix
 echo "Downloading icaclient..."
@@ -171,7 +173,7 @@ echo "Enabling dhcpcd module..."
 sudo systemctl start dhcpcd.service
 
 #set jdk as env for java
-sudo archlinux-java set java-11-openjdk
+#sudo archlinux-java set java-11-openjdk
 
 echo "End of script."
 echo "Move dotfiles to home if you want them to take effect."
