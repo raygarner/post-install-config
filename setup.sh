@@ -24,7 +24,7 @@ cd /home/ray
 
 #create dirs
 echo "Creating dirs in new user home..."
-mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music scripts music Documents builds Downloads
+mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music scripts music Documents builds Downloads .config/nvim
 
 #set up git
 echo "Adding git account details..."
@@ -49,6 +49,16 @@ git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/
 #download dotfiles
 echo "Downloading dotfiles..."
 git clone https://github.com/raygarner/dotfiles.git dotfiles
+
+#copy .vimrc to nvim
+cd dotfiles
+cp .vimrc /home/ray/.config/nvim
+mv /home/ray/.config/nvim/.vimrc /home/ray/.config/nvim/init.vim
+
+#copy dotfiles to home
+cd dotfiles
+cp * ..
+cd /home/ray
 
 #download and build dwm
 echo "Downloading dwm..."
@@ -112,7 +122,7 @@ cd /home/ray/builds
 #makepkg -si
 #cd /home/ray/builds
 echo "Installing scid..."
-sudo yay scid
+yay scid
 
 #download and builds stockfish
 #echo "Downloading stockfish..."
@@ -122,7 +132,7 @@ sudo yay scid
 #makepkg -si
 #cd /home/ray
 echo "Installing stockfish..."
-sudo yay stockfish
+yay stockfish
 
 #download and build brave
 #echo "Downloading brave..."
@@ -132,7 +142,11 @@ sudo yay stockfish
 #makepkg -si
 #cd /home/ray/builds
 echo "Installing brave..."
-sudo yay brave-bin
+yay brave-bin
+
+#download vim colour scheme
+echo "Downloading vim colour scheme..."
+yay gruvbox-material-git
 
 #download and build citrix
 echo "Downloading icaclient..."
@@ -188,5 +202,4 @@ echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 #sudo archlinux-java set java-11-openjdk
 
 echo "End of script."
-echo "Move dotfiles to home if you want them to take effect."
 echo "You should now reboot."
