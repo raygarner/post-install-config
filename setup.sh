@@ -24,7 +24,7 @@ cd /home/ray
 
 #create dirs
 echo "Creating dirs in new user home..."
-mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music scripts music Documents builds Downloads .config/nvim
+mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music vids/screencasts scripts music Documents builds Downloads .config/nvim
 
 #set up git
 echo "Adding git account details..."
@@ -50,14 +50,26 @@ git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/
 echo "Downloading dotfiles..."
 git clone https://github.com/raygarner/dotfiles.git dotfiles
 
-#copy .vimrc to nvim
+#copy init.vim to .config/nvim/
+echo "Moving init.vim to .config/nvim/"
 cd dotfiles
 cp init.vim /home/ray/.config/nvim
 
-#copy dotfiles to home
-cd dotfiles
-cp * ..
+#link dotfiles to home
+echo "Linking dotfiles and scripts..."
+ln .bashrc /home/ray/.bashrc
+ln .bash_profile /home/ray/.bash_profile
+ln init.vim /home/ray/.config/nvim/init.vim
+ln .xbindkeysrc /home/ray/.xbindkeysrc
+ln .xinitrc /home/ray/.xinitrc
+ln record.sh /home/ray/vids/screencasts/record.sh
+ln dl_playlist.sh /home/ray/music/dl_playlist.sh
+ln split_album.sh /home/ray/music/split_album.sh
 cd /home/ray
+
+#making scripts executable
+echo "Making scripts executable..."
+chmod +x /home/ray/music/split_album.sh /home/ray/music/dl_playlist.sh /home/ray/vids/screencasts/record.sh
 
 #download and build dwm
 echo "Downloading dwm..."
