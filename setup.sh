@@ -52,8 +52,7 @@ git clone https://github.com/raygarner/dotfiles.git dotfiles
 
 #copy .vimrc to nvim
 cd dotfiles
-cp .vimrc /home/ray/.config/nvim
-mv /home/ray/.config/nvim/.vimrc /home/ray/.config/nvim/init.vim
+cp init.vim /home/ray/.config/nvim
 
 #copy dotfiles to home
 cd dotfiles
