@@ -1,6 +1,6 @@
 #!bin/sh
 
-#requirements: 
+#requirements:
 #user created with sudo privs and script be in their home
 #internet connection
 #GRAPHICS DRIVERS
@@ -44,7 +44,7 @@ cd /home/ray
 
 #download wallpaper
 echo "Downloading wallpaper..."
-git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/ 
+git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/
 
 #download dotfiles
 echo "Downloading dotfiles..."
@@ -110,7 +110,7 @@ cd /home/ray/builds
 
 #download and build sent
 echo "Downloading sent..."
-git clone https://github.com/raygarner/rays_sent.git 
+git clone https://github.com/raygarner/rays_sent.git
 echo "Building sent..."
 cd rays_sent
 make
@@ -133,7 +133,7 @@ cd /home/ray/builds
 #makepkg -si
 #cd /home/ray/builds
 echo "Installing scid..."
-yay scid
+yay -S scid
 
 #download and builds stockfish
 #echo "Downloading stockfish..."
@@ -143,7 +143,7 @@ yay scid
 #makepkg -si
 #cd /home/ray
 echo "Installing stockfish..."
-yay stockfish
+yay -S stockfish
 
 #download and build brave
 #echo "Downloading brave..."
@@ -153,11 +153,11 @@ yay stockfish
 #makepkg -si
 #cd /home/ray/builds
 echo "Installing brave..."
-yay brave-bin
+yay -S brave-bin
 
 #download vim colour scheme
 echo "Downloading vim colour scheme..."
-yay gruvbox-material-git
+yay -S gruvbox-material-git
 
 #download and build citrix
 echo "Downloading icaclient..."
