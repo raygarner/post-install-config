@@ -65,6 +65,7 @@ echo "Linking dotfiles and scripts..."
 ln .bashrc /home/ray/.bashrc
 ln .bash_profile /home/ray/.bash_profile
 ln init.vim /home/ray/.config/nvim/init.vim
+ln init.vim /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
 ln record.sh /home/ray/vids/screencasts/record.sh
