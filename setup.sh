@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa neovim pass zip cups gutenprint sxiv xorg-xrandr
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr
 
 
 #set keyboard layout
@@ -55,17 +55,11 @@ git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/
 echo "Downloading dotfiles..."
 git clone https://github.com/raygarner/dotfiles.git dotfiles
 
-#copy init.vim to .config/nvim/
-echo "Moving init.vim to .config/nvim/"
-cd dotfiles
-cp init.vim /home/ray/.config/nvim
-
 #link dotfiles to home
 echo "Linking dotfiles and scripts..."
 ln .bashrc /home/ray/.bashrc
 ln .bash_profile /home/ray/.bash_profile
-ln init.vim /home/ray/.config/nvim/init.vim
-ln init.vim /home/ray/.vimrc
+ln .vimrc /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
 ln record.sh /home/ray/vids/screencasts/record.sh
