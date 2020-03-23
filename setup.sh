@@ -62,14 +62,23 @@ ln .bash_profile /home/ray/.bash_profile
 ln .vimrc /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
-ln record.sh /home/ray/vids/screencasts/record.sh
-ln dl_playlist.sh /home/ray/music/dl_playlist.sh
-ln split_album.sh /home/ray/music/split_album.sh
+#ln record.sh /home/ray/vids/screencasts/record.sh
+#ln dl_playlist.sh /home/ray/music/dl_playlist.sh
+#ln split_album.sh /home/ray/music/split_album.sh
 cd /home/ray
 
 #making scripts executable
-echo "Making scripts executable..."
-chmod +x /home/ray/music/split_album.sh /home/ray/music/dl_playlist.sh /home/ray/vids/screencasts/record.sh
+#echo "Making scripts executable..."
+#chmod +x /home/ray/music/split_album.sh /home/ray/music/dl_playlist.sh /home/ray/vids/screencasts/record.sh
+
+#download scripts
+echo "Downloading scripts..."
+git clone https://github.com/raygarner/scripts.git
+chmod +x scripts/*
+
+#add scripts dir to path
+echo "Adding scripts dir to path..."
+export PATH=$PATH:/home/ray/scripts
 
 #download and build dwm
 echo "Downloading dwm..."
@@ -177,12 +186,12 @@ cd /home/ray/builds
 echo "Adding SSL support to icaclient..."
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
 sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
-echo "Creating /bin shortcut for icaclient..."
-cd /bin
-sudo echo "#!/bin/sh" >> icaclient
-sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
-sudo chmod +x icaclient
-cd /home/ray/builds
+#echo "Creating /bin shortcut for icaclient..."
+#cd /bin
+#sudo echo "#!/bin/sh" >> icaclient
+#sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
+#sudo chmod +x icaclient
+#cd /home/ray/builds
 
 #download and build vmware-horizon
 echo "Downloading vmware-keymaps..."
