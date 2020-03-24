@@ -186,12 +186,12 @@ cd /home/ray/builds
 echo "Adding SSL support to icaclient..."
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
 sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
-#echo "Creating /bin shortcut for icaclient..."
-#cd /bin
-#sudo echo "#!/bin/sh" >> icaclient
-#sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
-#sudo chmod +x icaclient
-#cd /home/ray/builds
+echo "Creating /bin shortcut for icaclient..."
+cd /bin
+sudo echo "#!/bin/sh" >> icaclient
+sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
+sudo chmod +x icaclient
+cd /home/ray/builds
 
 #download and build vmware-horizon
 echo "Downloading vmware-keymaps..."
