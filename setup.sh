@@ -236,5 +236,8 @@ echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 #set jdk as env for java
 #sudo archlinux-java set java-11-openjdk
 
+#add real name for ray
+sudo chfn -f "Ray Garner" ray
+
 echo "End of script."
 echo "You should now reboot."
