@@ -100,6 +100,15 @@ make
 sudo make install
 cd /home/ray/builds
 
+#download and build tabbed
+echo "Downloading tabbed..."
+git clone https://github.com/raygarner/rays_tabbed.git
+echo "Building tabbed..."
+cd rays_tabbed
+make
+sudo make install
+cd /home/ray/builds
+
 #download and build slock
 echo "Downloading slock..."
 git clone https://github.com/raygarner/rays_slock.git
