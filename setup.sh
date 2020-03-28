@@ -11,7 +11,7 @@
 
 #install packages
 echo "Installing packages..."
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh
 
 
 #set keyboard layout
@@ -64,10 +64,16 @@ ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
 ln .project /home/ray/.project
 ln .inputrc /home/ray/.inputrc
+ln .zshrc /home/ray/.zshrc
+ln .aliases /home/ray/.aliases
+ln .zprofile /home/ray/.zprofile
 #ln record.sh /home/ray/vids/screencasts/record.sh
 #ln dl_playlist.sh /home/ray/music/dl_playlist.sh
 #ln split_album.sh /home/ray/music/split_album.sh
 cd /home/ray
+
+#set shell
+chsh -s /bin/zsh
 
 #making scripts executable
 #echo "Making scripts executable..."
