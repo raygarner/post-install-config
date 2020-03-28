@@ -63,6 +63,7 @@ ln .vimrc /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
 ln .project /home/ray/.project
+ln .inputrc /home/ray/.inputrc
 #ln record.sh /home/ray/vids/screencasts/record.sh
 #ln dl_playlist.sh /home/ray/music/dl_playlist.sh
 #ln split_album.sh /home/ray/music/split_album.sh
