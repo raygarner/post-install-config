@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 #requirements:
 #user created with sudo privs and script be in their home
