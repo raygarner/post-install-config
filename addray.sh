@@ -5,6 +5,6 @@ pacman -S vi sudo
 
 useradd ray -m
 passwd ray
-usermod -aG wheel
+usermod -aG wheel ray
 visudo
 
