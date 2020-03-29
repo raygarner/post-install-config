@@ -24,7 +24,10 @@ cd /home/ray
 
 #create dirs
 echo "Creating dirs in new user home..."
-mkdir pics pics/screenshots pics/papes pics/people vids vids/films vids/shows vids/music vids/screencasts music Documents builds Downloads .config/nvim
+mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts docs builds dls .config/zsh code
+
+#create zsh history
+touch /home/ray/.config/zsh/history
 
 #set up git
 echo "Adding git account details..."
