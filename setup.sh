@@ -24,7 +24,7 @@ cd /home/ray
 
 #create dirs
 echo "Creating dirs in new user home..."
-mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config/zsh code
+mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config/zsh code Downloads/music Downloads/isos/ Downloads/vids
 
 #create zsh history
 touch /home/ray/.config/zsh/history
