@@ -8,6 +8,9 @@
 #pactstrap note:
 #pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
 
+#update and upgrade
+echo "running pacman -Syu"
+sudo pacman -Syu
 
 #install packages
 echo "Installing packages..."
