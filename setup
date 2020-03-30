@@ -57,7 +57,7 @@ pass init "$KEY"
 
 #download wallpaper
 read -p "Downloading wallpaper..."
-git clone https://github.com/raygarner/wallpaper.git /home/ray/pics/papes/
+git clone https://github.com/raygarner/wallpaper.git /home/ray/media/pics/papes/
 
 #download dotfiles
 read -p "Downloading dotfiles..."
