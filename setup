@@ -65,6 +65,7 @@ git clone https://github.com/raygarner/dotfiles.git dotfiles
 
 #link dotfiles to home
 echo "Linking dotfiles and scripts..."
+cd /home/ray/dotfiles
 ln .bashrc /home/ray/.bashrc
 ln .bash_profile /home/ray/.bash_profile
 ln .vimrc /home/ray/.vimrc
