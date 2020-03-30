@@ -5,9 +5,6 @@
 #internet connection
 #GRAPHICS DRIVERS
 
-#pactstrap note:
-#pacstrap /mnt base linux linux-firmware vim netctl dialog wpa_supplicant man-db man-pages texinfo
-
 #update and upgrade
 read -p "running pacman -Syu"
 sudo pacman -Syu
@@ -17,7 +14,7 @@ read -p "Installing packages..."
 #sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh virtualbox
 sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
 
-read -p 'packages installed' epic
+read -p 'packages installed'
 
 #set keyboard layout
 read -p "Setting keyboard layout to gb..."
@@ -66,8 +63,8 @@ git clone https://github.com/raygarner/dotfiles.git dotfiles
 #link dotfiles to home
 read -p "Linking dotfiles and scripts..."
 cd /home/ray/dotfiles
-ln .bashrc /home/ray/.bashrc
-ln .bash_profile /home/ray/.bash_profile
+#ln .bashrc /home/ray/.bashrc
+#ln .bash_profile /home/ray/.bash_profile
 ln .vimrc /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
