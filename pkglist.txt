@@ -85,7 +85,6 @@ git
 gmsynth.lv2
 gnu-free-fonts
 grub
-gruvbox-material-git
 guitarix
 gvim
 happy
@@ -165,6 +164,7 @@ pd-lua
 perl-rename
 picom
 pkgconf
+pkgfile
 polyphone
 pulseaudio
 pulseaudio-alsa
@@ -180,6 +180,7 @@ qmidiroute
 qsampler
 qsynth
 qtractor
+qutebrowser
 qxgedit
 realtime-privileges
 redshift
@@ -237,7 +238,6 @@ vamp-aubio-plugins
 vco-plugins
 vi
 vico
-vim-gruvbox-git
 virtualbox
 vm.lv2
 vmpk
