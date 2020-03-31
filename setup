@@ -106,9 +106,9 @@ cd /home/ray/builds
 
 #download and build st
 read -p "Downloading st..."
-git clone https://github.com/raygarner/rays_st.git
+git clone https://github.com/raygarner/rays_new_st.git
 read -p "Building st..."
-cd rays_st
+cd rays_new_st
 make
 sudo make install
 cd /home/ray/builds
