@@ -78,6 +78,13 @@ ln .zprofile /home/ray/.zprofile
 #ln split_album.sh /home/ray/music/split_album.sh
 cd /home/ray
 
+#set up neomutt config
+read -p "Downloading neomutt files..."
+cd /home/ray/.config/
+git clone https://github.com/raygarner/neomutt_config.git
+mv neomutt_config neomutt
+cd /home/ray
+
 #set shell
 chsh -s /bin/zsh
 
