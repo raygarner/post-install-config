@@ -117,7 +117,6 @@ lmms
 lsp-plugins
 luppp
 lv2file
-lynx
 m4
 make
 man-db
@@ -137,6 +136,7 @@ musescore
 nano
 ncmpcpp
 neofetch
+neomutt
 netctl
 ninjas2
 njconnect
@@ -247,6 +247,7 @@ vmware-horizon-smartcard
 vmware-horizon-tsdr
 vmware-horizon-usb
 vmware-keymaps
+w3m
 wah-plugins
 webkit2gtk
 which
