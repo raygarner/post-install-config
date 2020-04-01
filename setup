@@ -282,5 +282,12 @@ read -p "Running mutt-wizard..."
 mw add
 mw add
 
+#set default image viewer
+read -p "Setting default image viewer..."
+xdg-mime default sxiv.desktop image/jpg
+xdg-mime default sxiv.desktop image/jpeg
+xdg-mime default sxiv.desktop image/png
+
+
 echo "End of script."
 echo "You should now reboot."
