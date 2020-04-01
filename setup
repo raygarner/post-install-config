@@ -164,6 +164,14 @@ cd yay
 makepkg -si
 cd /home/ray/builds
 
+#install urlview
+read -p "installing urlview..."
+yay -S urlview
+
+#install mutt wizard
+read -p "installing mutwizard..."
+yay -S mutt-wizard-git
+
 #download and build scid
 #read -p "Downloading scid..."
 #git clone https://aur.archlinux.org/scid.git
@@ -268,6 +276,11 @@ echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 
 #add real name for ray
 sudo chfn -f "Ray Garner" ray
+
+#run mw
+read -p "Running mutt-wizard..."
+mw add
+mw add
 
 echo "End of script."
 echo "You should now reboot."

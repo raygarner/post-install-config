@@ -1,4 +1,5 @@
 a2jmidid
+abook
 acpi
 adljack
 adlplug
@@ -96,6 +97,7 @@ hydrogen
 icaclient
 infamousplugins
 ir.lv2
+isync
 jaaa
 jack-stdio
 jack_capture
@@ -117,6 +119,7 @@ lmms
 lsp-plugins
 luppp
 lv2file
+lynx
 m4
 make
 man-db
@@ -132,7 +135,9 @@ mixxx
 mons
 moony.lv2
 mpv
+msmtp
 musescore
+mutt-wizard-git
 nano
 ncmpcpp
 neofetch
@@ -234,6 +239,7 @@ transmission-cli
 transmission-remote-cli-git
 unrar
 unzip
+urlview
 vamp-aubio-plugins
 vco-plugins
 vi
