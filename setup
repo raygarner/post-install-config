@@ -80,10 +80,10 @@ cd /home/ray
 
 #set up neomutt config
 read -p "Downloading neomutt files..."
-cd /home/ray/.config/
-git clone https://github.com/raygarner/neomutt_config.git
-mv neomutt_config neomutt
-cd /home/ray
+cd /home/ray/.config
+git clone https://github.com/raygarner/neomutt_config.git mutt
+cd mutt
+git checkout --track origin/new_stuff
 
 #set shell
 chsh -s /bin/zsh
@@ -277,10 +277,10 @@ echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 #add real name for ray
 sudo chfn -f "Ray Garner" ray
 
-#run mw
-read -p "Running mutt-wizard..."
-mw add
-mw add
+#add email passwords
+read -p "Insert passwords for email accounts..."
+pass insert mutt-wizard-ray
+pass insert mutt-wizard-psyrg4
 
 #set default image viewer
 read -p "Setting default image viewer..."
