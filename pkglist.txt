@@ -1,6 +1,5 @@
 a2jmidid
 abook
-acpi
 adljack
 adlplug
 aeolus
@@ -35,6 +34,7 @@ bshapr
 bslizr
 cabal-install
 cadence
+cairo
 calcurse
 calf
 caps
@@ -44,6 +44,7 @@ cmt
 csound
 csoundqt
 cups
+dash
 deteriorate-lv2
 dgedit
 dhcpcd
@@ -75,6 +76,7 @@ freetype2
 freewheeling
 g2reverb
 gcc
+gcr
 gdb
 geonkick
 ghc
@@ -93,7 +95,6 @@ haskell-haddock-library
 helm-synth
 hexter
 htop
-hydrogen
 icaclient
 infamousplugins
 ir.lv2
@@ -139,13 +140,11 @@ msmtp
 musescore
 mutt-wizard-git
 nano
-ncmpcpp
 neofetch
 neomutt
 netctl
 ninjas2
 njconnect
-nmap
 noise-repellent
 non-mixer
 non-sequencer
@@ -176,6 +175,8 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 pulsemixer
 pvoc
+python-pip
+python-wheel
 qastools
 qjackctl
 qmidiarp
@@ -185,7 +186,6 @@ qmidiroute
 qsampler
 qsynth
 qtractor
-qutebrowser
 qxgedit
 realtime-privileges
 redshift
@@ -232,7 +232,6 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
-thunderbird
 tidalcycles
 timidity++
 transmission-cli
@@ -240,6 +239,7 @@ transmission-remote-cli-git
 unrar
 unzip
 urlview
+uzbl-browser-next-git
 vamp-aubio-plugins
 vco-plugins
 vi
