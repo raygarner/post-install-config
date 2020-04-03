@@ -212,6 +212,14 @@ yay -S mons
 read -p "Installing xwallpaper..."
 yay -S xwallpaper
 
+#install matlab
+read -p "Installing matlab..."
+yay -S matlab
+
+#installing matlab ncurses dependancy
+read -p "Installing ncurses5-compat-libs (for matlab)..."
+yay -S ncurses5-compat-libs
+
 #download and build citrix
 read -p "Downloading icaclient..."
 git clone https://aur.archlinux.org/icaclient.git
