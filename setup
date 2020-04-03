@@ -99,10 +99,6 @@ read -p "Downloading scripts..."
 git clone https://github.com/raygarner/scripts.git
 chmod +x scripts/*
 
-#add scripts dir to path
-read -p "Adding scripts dir to path..."
-export PATH=$PATH:/home/ray/scripts
-
 #download and build dwm
 read -p "Downloading dwm..."
 cd builds
