@@ -203,8 +203,8 @@ read -p "Installing brave..."
 yay -S brave-bin
 
 #download vim colour scheme
-read -p "Downloading vim colour scheme..."
-yay -S gruvbox-material-git
+#read -p "Downloading vim colour scheme..."
+#yay -S gruvbox-material-git
 
 #install mons
 read -p "Installing mons..."
