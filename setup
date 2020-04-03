@@ -62,7 +62,7 @@ read -p "Downloading dotfiles..."
 git clone https://github.com/raygarner/dotfiles.git dotfiles
 
 #link dotfiles to home
-read -p "Linking dotfiles and scripts..."
+read -p "Linking dotfiles..."
 cd /home/ray/dotfiles
 #ln .bashrc /home/ray/.bashrc
 #ln .bash_profile /home/ray/.bash_profile
@@ -85,6 +85,7 @@ cd /home/ray/.config
 git clone https://github.com/raygarner/neomutt_config.git mutt
 cd mutt
 git checkout --track origin/new_stuff
+cd /home/ray
 
 #set shell
 chsh -s /bin/zsh
