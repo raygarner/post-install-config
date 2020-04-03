@@ -70,7 +70,7 @@ ln .vimrc /home/ray/.vimrc
 ln .xbindkeysrc /home/ray/.xbindkeysrc
 ln .xinitrc /home/ray/.xinitrc
 ln .project /home/ray/.project
-ln .inputrc /home/ray/.inputrc
+#ln .inputrc /home/ray/.inputrc
 ln .zshrc /home/ray/.zshrc
 ln .aliases /home/ray/.aliases
 ln .zprofile /home/ray/.zprofile
