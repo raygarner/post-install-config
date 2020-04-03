@@ -9,6 +9,17 @@
 read -p "running pacman -Syu"
 sudo pacman -Syu
 
+#cd to home dir
+read -p "Moving to /home/ray"
+cd /home/ray
+
+#create dirs
+read -p "Creating dirs in new user home..."
+mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config .config/zsh code Downloads/music Downloads/isos/ Downloads/vids
+
+#create zsh history
+touch /home/ray/.config/zsh/history
+
 #install packages
 read -p "Installing packages..."
 #sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh virtualbox
@@ -19,17 +30,6 @@ read -p 'packages installed'
 #set keyboard layout
 read -p "Setting keyboard layout to gb..."
 sudo localectl --no-convert set-x11-keymap gb
-
-#cd to home dir
-read -p "Moving to /home/ray"
-cd /home/ray
-
-#create dirs
-read -p "Creating dirs in new user home..."
-mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config/zsh code Downloads/music Downloads/isos/ Downloads/vids
-
-#create zsh history
-touch /home/ray/.config/zsh/history
 
 #set up git
 read -p "Adding git account details..."
