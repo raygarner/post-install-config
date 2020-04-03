@@ -224,11 +224,11 @@ cd /home/ray/builds
 read -p "Adding SSL support to icaclient..."
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
 sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
-read -p "Creating /bin shortcut for icaclient..."
-cd /bin
-sudo echo "#!/bin/sh" >> icaclient
-sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
-sudo chmod +x icaclient
+#read -p "Creating /bin shortcut for icaclient..."
+#cd /bin
+#sudo echo "#!/bin/sh" >> icaclient
+#sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
+#sudo chmod +x icaclient
 cd /home/ray/builds
 
 #download and build vmware-horizon
