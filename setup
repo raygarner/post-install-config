@@ -6,47 +6,47 @@
 #GRAPHICS DRIVERS
 
 #update and upgrade
-read -p "running pacman -Syu"
+read -rp "running pacman -Syu"
 sudo pacman -Syu
 
 #cd to home dir
-read -p "Moving to /home/ray"
-cd /home/ray
+read -rp "Moving to /home/ray"
+cd /home/ray || exit
 
 #create dirs
-read -p "Creating dirs in new user home..."
+read -rp "Creating dirs in new user home..."
 mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config .config/zsh code Downloads/music Downloads/isos/ Downloads/vids
 
 #create zsh history
 touch /home/ray/.config/zsh/history
 
 #install packages
-read -p "Installing packages..."
-cd /home/ray/post-install-config
+read -rp "Installing packages..."
+cd /home/ray/post-install-config || exit
 #sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unnrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh virtualbox
-sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+sudo pacman -S --needed "$(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))"
 
-read -p 'packages installed'
+read -rp 'packages installed'
 
 #set keyboard layout
-read -p "Setting keyboard layout to gb..."
+read -rp "Setting keyboard layout to gb..."
 sudo localectl --no-convert set-x11-keymap gb
 
 #set up git
-read -p "Adding git account details..."
+read -rp "Adding git account details..."
 git config --global user.email "ray@perfectcast.co.uk"
 git config --global user.name "Ray Garner"
-read -p "Generating ssh key..."
+read -rp "Generating ssh key..."
 ssh-keygen -t rsa -b 4096 -C "ray@perfectcast.co.uk"
 eval "$(ssh-agent -s)"
-read -p "Adding ssh key to agent..."
-cd /home/ray/.ssh
+read -rp "Adding ssh key to agent..."
+cd /home/ray/.ssh || exit
 ssh-add id_rsa
-read -p "Generating copy key script..."
+read -rp "Generating copy key script..."
 echo "#!/bin/sh" > copy.sh
 echo "xclip -sel clip < id_rsa.pub" >> copy.sh
 chmod +x copy.sh
-cd /home/ray
+cd /home/ray || exit
 
 #set up pass
 gpg --full-generate-key
@@ -54,16 +54,16 @@ KEY="$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' 
 pass init "$KEY"
 
 #download wallpaper
-read -p "Downloading wallpaper..."
+read -rp "Downloading wallpaper..."
 git clone https://github.com/raygarner/wallpaper.git /home/ray/media/pics/papes/
 
 #download dotfiles
-read -p "Downloading dotfiles..."
+read -rp "Downloading dotfiles..."
 git clone https://github.com/raygarner/dotfiles.git dotfiles
 
 #link dotfiles to home
-read -p "Linking dotfiles..."
-cd /home/ray/dotfiles
+read -rp "Linking dotfiles..."
+cd /home/ray/dotfiles || exit
 #ln .bashrc /home/ray/.bashrc
 #ln .bash_profile /home/ray/.bash_profile
 ln .vimrc /home/ray/.vimrc
@@ -77,204 +77,204 @@ ln .zprofile /home/ray/.zprofile
 #ln record.sh /home/ray/vids/screencasts/record.sh
 #ln dl_playlist.sh /home/ray/music/dl_playlist.sh
 #ln split_album.sh /home/ray/music/split_album.sh
-cd /home/ray
+cd /home/ray || exit
 
 #set up neomutt config
-read -p "Downloading neomutt files..."
-cd /home/ray/.config
+read -rp "Downloading neomutt files..."
+cd /home/ray/.config || exit
 git clone https://github.com/raygarner/neomutt_config.git mutt
-cd mutt
+cd mutt || exit
 git checkout --track origin/new_stuff
-cd /home/ray
+cd /home/ray || exit
 
 #set shell
 chsh -s /bin/zsh
 
 #making scripts executable
-#read -p "Making scripts executable..."
+#read -rp "Making scripts executable..."
 #chmod +x /home/ray/music/split_album.sh /home/ray/music/dl_playlist.sh /home/ray/vids/screencasts/record.sh
 
 #download scripts
-read -p "Downloading scripts..."
+read -rp "Downloading scripts..."
 git clone https://github.com/raygarner/scripts.git
 chmod +x scripts/*
 
 #download and build dwm
-read -p "Downloading dwm..."
-cd builds
+read -rp "Downloading dwm..."
+cd builds || exit
 git clone https://github.com/raygarner/rays_dwm.git
-read -p "Building dwm..."
-cd rays_dwm
+read -rp "Building dwm..."
+cd rays_dwm || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build st
-read -p "Downloading st..."
+read -rp "Downloading st..."
 git clone https://github.com/raygarner/rays_new_st.git
-read -p "Building st..."
-cd rays_new_st
+read -rp "Building st..."
+cd rays_new_st || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build tabbed
-read -p "Downloading tabbed..."
+read -rp "Downloading tabbed..."
 git clone https://github.com/raygarner/rays_tabbed.git
-read -p "Building tabbed..."
-cd rays_tabbed
+read -rp "Building tabbed..."
+cd rays_tabbed || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build slock
-read -p "Downloading slock..."
+read -rp "Downloading slock..."
 git clone https://github.com/raygarner/rays_slock.git
-read -p "Building slock..."
-cd rays_slock
+read -rp "Building slock..."
+cd rays_slock || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build farbfeld
-read -p "Downloading farbeld..."
+read -rp "Downloading farbeld..."
 git clone https://git.suckless.org/farbfeld
-read -p "Building farbfeld..."
-cd farbfeld
+read -rp "Building farbfeld..."
+cd farbfeld || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build sent
-read -p "Downloading sent..."
+read -rp "Downloading sent..."
 git clone https://github.com/raygarner/rays_sent.git
-read -p "Building sent..."
-cd rays_sent
+read -rp "Building sent..."
+cd rays_sent || exit
 make
 sudo make install
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build yay
-read -p "Downloading yay..."
+read -rp "Downloading yay..."
 git clone https://aur.archlinux.org/yay.git
-read -p "Building yay..."
-cd yay
+read -rp "Building yay..."
+cd yay || exit
 makepkg -si
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #install urlview
-read -p "installing urlview..."
+read -rp "installing urlview..."
 yay -S urlview
 
 #install mutt wizard
-read -p "installing mutwizard..."
+read -rp "installing mutwizard..."
 yay -S mutt-wizard-git
 
 #download and build scid
-#read -p "Downloading scid..."
+#read -rp "Downloading scid..."
 #git clone https://aur.archlinux.org/scid.git
-#read -p "Building scid..."
+#read -rp "Building scid..."
 #cd scid
 #makepkg -si
 #cd /home/ray/builds
-read -p "Installing scid..."
+read -rp "Installing scid..."
 yay -S scid
 
 #download and builds stockfish
-#read -p "Downloading stockfish..."
+#read -rp "Downloading stockfish..."
 #git clone https://aur.archlinux.org/stockfish.git
-#read -p "Building stockfish..."
+#read -rp "Building stockfish..."
 #cd stockfish
 #makepkg -si
 #cd /home/ray
-read -p "Installing stockfish..."
+read -rp "Installing stockfish..."
 yay -S stockfish
 
 #download and build brave
-#read -p "Downloading brave..."
+#read -rp "Downloading brave..."
 #git clone https://aur.archlinux.org/brave-bin.git
-#read -p "Building brave..."
+#read -rp "Building brave..."
 #cd brave-bin
 #makepkg -si
 #cd /home/ray/builds
-read -p "Installing brave..."
+read -rp "Installing brave..."
 yay -S brave-bin
 
 #download vim colour scheme
-#read -p "Downloading vim colour scheme..."
+#read -rp "Downloading vim colour scheme..."
 #yay -S gruvbox-material-git
 
 #install mons
-read -p "Installing mons..."
+read -rp "Installing mons..."
 yay -S mons
 
 #install xwallpaper
-read -p "Installing xwallpaper..."
+read -rp "Installing xwallpaper..."
 yay -S xwallpaper
 
 #install matlab
-read -p "Installing matlab..."
+read -rp "Installing matlab..."
 yay -S matlab
 
 #installing matlab ncurses dependancy
-read -p "Installing ncurses5-compat-libs (for matlab)..."
+read -rp "Installing ncurses5-compat-libs (for matlab)..."
 yay -S ncurses5-compat-libs
 
 #download and build citrix
-read -p "Downloading icaclient..."
+read -rp "Downloading icaclient..."
 git clone https://aur.archlinux.org/icaclient.git
-read -p "Building icaclient..."
-cd icaclient
+read -rp "Building icaclient..."
+cd icaclient || exit
 makepkg -si
 mkdir -p /home/ray/.ICAClient/cache
 cp /opt/Citrix/ICAClient/config/{All_Regions,Trust_Region,Unkown_Region,canonicalization,regions}.ini /home/ray/.ICAClient
-cd /home/ray/builds
-read -p "Adding SSL support to icaclient..."
+cd /home/ray/builds || exit
+read -rp "Adding SSL support to icaclient..."
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
 sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
-#read -p "Creating /bin shortcut for icaclient..."
+#read -rp "Creating /bin shortcut for icaclient..."
 #cd /bin
 #sudo echo "#!/bin/sh" >> icaclient
 #sudo echo "/opt/Citrix/ICAClient/selfservice" >> icaclient
 #sudo chmod +x icaclient
-cd /home/ray/builds
+cd /home/ray/builds || exit
 
 #download and build vmware-horizon
-read -p "Downloading vmware-keymaps..."
+read -rp "Downloading vmware-keymaps..."
 git clone https://aur.archlinux.org/vmware-keymaps.git
-read -p "Building vmware-keymaps..."
-cd vmware-keymaps
+read -rp "Building vmware-keymaps..."
+cd vmware-keymaps || exit
 makepkg -si
-cd /home/ray/builds
-read -p "Downloading vmware-horizon-client..."
+cd /home/ray/builds || exit
+read -rp "Downloading vmware-horizon-client..."
 git clone https://aur.archlinux.org/vmware-horizon-client.git
-read -p "Building vmware-horizon-client..."
-cd vmware-horizon-client
+read -rp "Building vmware-horizon-client..."
+cd vmware-horizon-client || exit
 makepkg -si
-cd /home/ray
+cd /home/ray || exit
 
 
 #start and enable dhcpcd
-read -p "Starting dhcpcd module..."
+read -rp "Starting dhcpcd module..."
 sudo systemctl enable dhcpcd.service
-read -p "Enabling dhcpcd module..."
+read -rp "Enabling dhcpcd module..."
 sudo systemctl start dhcpcd.service
 
 #start and enable bluetooth service
-read -p "Enabling bluetooth.service..."
+read -rp "Enabling bluetooth.service..."
 sudo systemctl enable bluetooth.service
-read -p "Starting bluetooth.service..."
+read -rp "Starting bluetooth.service..."
 sudo systemctl start bluetooth.service
 
 #start and enable cups
-read -p "Enabling cups service..."
+read -rp "Enabling cups service..."
 sudo systemctl enable org.cups.cupsd.service
-read -p "Starting cups service..."
+read -rp "Starting cups service..."
 sudo systemctl start org.cups.cupsd.service
 
 
 #bluetooth conf stuff
-read -p "Configuring pulseaudio for bluetooth compatability..."
+read -rp "Configuring pulseaudio for bluetooth compatability..."
 sudo echo "" >> /etc/pulse/system.pa
 echo "load-module module-bluetooth-policy" >> /etc/pulse/system.pa
 echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
@@ -286,18 +286,18 @@ echo "load-module module-bluetooth-discover" >> /etc/pulse/system.pa
 sudo chfn -f "Ray Garner" ray
 
 #add email passwords
-read -p "Insert passwords for email accounts..."
+read -rp "Insert passwords for email accounts..."
 pass insert mutt-wizard-ray
 pass insert mutt-wizard-psyrg4
 
 #set default image viewer
-read -p "Setting default image viewer..."
+read -rp "Setting default image viewer..."
 xdg-mime default sxiv.desktop image/jpg
 xdg-mime default sxiv.desktop image/jpeg
 xdg-mime default sxiv.desktop image/png
 
 #relink /bin/sh
-read -p "Relinking /bin/sh to dash..."
+read -rp "Relinking /bin/sh to dash..."
 sudo ln -sfT dash /usr/bin/sh
 
 
