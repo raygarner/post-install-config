@@ -120,13 +120,13 @@ sudo make install
 cd /home/ray/builds || exit
 
 #download and build tabbed
-read -rp "Downloading tabbed..."
-git clone https://github.com/raygarner/rays_tabbed.git
-read -rp "Building tabbed..."
-cd rays_tabbed || exit
-make
-sudo make install
-cd /home/ray/builds || exit
+#read -rp "Downloading tabbed..."
+#git clone https://github.com/raygarner/rays_tabbed.git
+#read -rp "Building tabbed..."
+#cd rays_tabbed || exit
+#make
+#sudo make install
+#cd /home/ray/builds || exit
 
 #download and build slock
 read -rp "Downloading slock..."
