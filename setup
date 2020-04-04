@@ -296,6 +296,10 @@ xdg-mime default sxiv.desktop image/jpg
 xdg-mime default sxiv.desktop image/jpeg
 xdg-mime default sxiv.desktop image/png
 
+#relink /bin/sh
+read -p "Relinking /bin/sh to dash..."
+sudo ln -sfT dash /usr/bin/sh
+
 
 echo "End of script."
 echo "You should now reboot."
