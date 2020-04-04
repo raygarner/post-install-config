@@ -196,6 +196,7 @@ sc3-plugins
 scid
 scrot
 setbfree
+shellcheck
 sherlock.lv2
 snd
 solfege
