@@ -112,9 +112,9 @@ cd /home/ray/builds || exit
 
 #download and build st
 read -rp "Downloading st..."
-git clone https://github.com/raygarner/rays_new_st.git
+git clone https://github.com/raygarner/rays_st_3.git
 read -rp "Building st..."
-cd rays_new_st || exit
+cd rays_st_3 || exit
 make
 sudo make install
 cd /home/ray/builds || exit
