@@ -63,6 +63,7 @@ eclipse-java
 element
 eq10q
 eteroj.lv2
+expect
 fabla
 fakeroot
 faust
@@ -264,6 +265,7 @@ wpa_supplicant
 x42-plugins
 xbindkeys
 xclip
+xdotool
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-vesa
