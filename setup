@@ -292,10 +292,14 @@ read -rp "Configuring pulseaudio for bluetooth compatability..."
 #add real name for ray
 sudo chfn -f "Ray Garner" ray
 
-#add email passwords
-read -rp "Insert passwords for email accounts..."
+#add passwords
+read -rp "Insert passwords..."
 pass insert mutt-wizard-ray
 pass insert mutt-wizard-psyrg4
+pass insert general
+pass insert paypal.com
+pass insert psyrg4_db
+pass insert ftp.perfectcast.com
 
 #set default image viewer
 read -rp "Setting default image viewer..."
