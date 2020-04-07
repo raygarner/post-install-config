@@ -119,6 +119,17 @@ make
 sudo make install
 cd /home/ray/builds || exit
 
+#download and build surf
+read -rp "Downloading surf..."
+git clone https://github.com/raygarner/rays_surf.git
+read -rp "Building surf..."
+cd rays_surf || exit
+make
+sudo make install
+rm /home/ray/.surf/script.js
+ln script.js /home/ray/.surf/script.js
+cd /home/ray/builds || exit
+
 #download and build tabbed
 #read -rp "Downloading tabbed..."
 #git clone https://github.com/raygarner/rays_tabbed.git
