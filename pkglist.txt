@@ -28,7 +28,6 @@ blop.lv2
 bluez
 bluez-hid2hci
 bluez-utils
-brave-bin
 bsequencer
 bshapr
 bslizr
@@ -110,6 +109,7 @@ jacktrip
 jalv
 japa
 jconvolver
+jdk8-openjdk
 jnoisemeter
 jsampler
 libtool
@@ -133,6 +133,7 @@ mephisto.lv2
 meterbridge
 midi_matrix.lv2
 midimsg-lv2
+minecraft
 mixxx
 mons
 moony.lv2
