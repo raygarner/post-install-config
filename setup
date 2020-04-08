@@ -16,7 +16,7 @@ cd /home/ray || exit
 
 #create dirs
 read -rp "Creating dirs in new user home..."
-mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config .config/zsh src Downloads/music Downloads/isos/ Downloads/vids
+mkdir media media/audio media/audio/music media/pics media/pics/papes media/pics/people media/pics/screenshots media/vids media/vids/shows media/vids/films media/vids/screencasts Documents builds Downloads .config .config/zsh src Downloads/music Downloads/isos/ Downloads/vids .surf
 
 #create zsh history
 touch /home/ray/.config/zsh/history
@@ -24,10 +24,10 @@ touch /home/ray/.config/zsh/history
 #install packages
 read -rp "Installing packages..."
 cd /home/ray/post-install-config || exit
-#sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh virtualbox neomutt
-sudo pacman -S --needed "$(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))"
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr eclipse numlockx calcurse zsh virtualbox neomutt git-lfs
+#sudo pacman -S --needed "$(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))"
 
-read -rp 'packages installed'
+read -rp "packages installed..."
 
 #set keyboard layout
 read -rp "Setting keyboard layout to gb..."
@@ -126,7 +126,7 @@ read -rp "Building surf..."
 cd rays_surf || exit
 make
 sudo make install
-rm /home/ray/.surf/script.js
+#rm /home/ray/.surf/script.js
 ln script.js /home/ray/.surf/script.js
 cd /home/ray/builds || exit
 
@@ -149,13 +149,14 @@ sudo make install
 cd /home/ray/builds || exit
 
 #download and build farbfeld
-read -rp "Downloading farbeld..."
-git clone https://git.suckless.org/farbfeld
-read -rp "Building farbfeld..."
-cd farbfeld || exit
-make
-sudo make install
-cd /home/ray/builds || exit
+#read -rp "Downloading farbeld..."
+#git clone https://git.suckless.org/farbfeld
+#read -rp "Building farbfeld..."
+#cd farbfeld || exit
+#make
+#sudo make install
+#cd /home/ray/builds || exit
+yay -S farbfeld
 
 #download and build sent
 read -rp "Downloading sent..."
@@ -322,6 +323,10 @@ xdg-mime default sxiv.desktop image/png
 read -rp "Relinking /bin/sh to dash..."
 sudo ln -sfT dash /usr/bin/sh
 
+#block ads
+cd /home/ray || exit
+curl https://raw.githubusercontent.com/LukeSmithxyz/etc/master/ips > ips
+sudo cat ips >> /etc/hosts
 
 echo "End of script."
 echo "You should now reboot."
