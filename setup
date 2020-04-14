@@ -149,14 +149,13 @@ sudo make install
 cd /home/ray/builds || exit
 
 #download and build farbfeld
-#read -rp "Downloading farbeld..."
-#git clone https://git.suckless.org/farbfeld
-#read -rp "Building farbfeld..."
-#cd farbfeld || exit
-#make
-#sudo make install
-#cd /home/ray/builds || exit
-yay -S farbfeld
+read -rp "Downloading farbeld..."
+git clone https://git.suckless.org/farbfeld
+read -rp "Building farbfeld..."
+cd farbfeld || exit
+make
+sudo make install
+cd /home/ray/builds || exit
 
 #download and build sent
 read -rp "Downloading sent..."
