@@ -224,13 +224,13 @@ yay -S mons
 read -rp "Installing xwallpaper..."
 yay -S xwallpaper
 
-#install matlab
-read -rp "Installing matlab..."
-yay -S matlab
-
 #installing matlab ncurses dependancy
 read -rp "Installing ncurses5-compat-libs (for matlab)..."
 yay -S ncurses5-compat-libs
+
+#install matlab
+read -rp "Installing matlab..."
+yay -S matlab
 
 #download and build citrix
 read -rp "Downloading icaclient..."
