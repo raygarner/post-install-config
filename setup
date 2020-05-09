@@ -82,7 +82,7 @@ cd /home/ray || exit
 
 #download uni.bib
 cd /home/ray/Documents
-git clone https://github.com/raygarner/bib.git
+git clone https://github.com/raygarner/latex.git
 cd /home/ray
 
 #set up neomutt config
