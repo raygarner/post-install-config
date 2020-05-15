@@ -327,10 +327,13 @@ xdg-mime default sxiv.desktop image/png
 read -rp "Relinking /bin/sh to dash..."
 sudo ln -sfT dash /usr/bin/sh
 
-#block ads
+#block ads and trackers
 cd /home/ray || exit
-curl https://raw.githubusercontent.com/LukeSmithxyz/etc/master/ips > ips
-sudo cat ips >> /etc/hosts
+#curl https://raw.githubusercontent.com/LukeSmithxyz/etc/master/ips > ips
+#sudo cat ips >> /etc/hosts
+git clone https://github.com/raygarner/hosts.git
+cd hosts || exit
+sudo cat hosts >> /etc/hosts
 
 echo "End of script."
 echo "You should now reboot."
