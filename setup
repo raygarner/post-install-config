@@ -179,6 +179,10 @@ cd yay || exit
 makepkg -si
 cd /home/ray/builds || exit
 
+#install reaper
+read -rp "installing reaper..."
+yay -S reaper-bin
+
 #install eclipse
 read -rp "installing eclipse..."
 yay -S eclipse-java
