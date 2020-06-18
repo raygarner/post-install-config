@@ -24,7 +24,7 @@ touch /home/ray/.config/zsh/history
 #install packages
 read -rp "Installing packages..."
 cd /home/ray/post-install-config || exit
-sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot xbindkeys htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr numlockx calcurse zsh virtualbox neomutt git-lfs biber imagemagick
+sudo pacman -S zathura zathura-pdf-mupdf make gvim gnu-free-fonts xorg xorg-xinit redshift youtube-dl mpv scrot htop sudo vi pulseaudio compton acpi git xorg-xsetroot xorg-server dmenu libx11 freetype2 pkg-config transmission-cli base-devel neofetch xclip openssh unzip thunderbird perl-rename pulsemixer gdb ghc ghc-static cabal-install stack haskell-haddock-library alex happy musescore gimp unrar pro-audio texlive-most texlive-lang discord octave pandoc dosfstools nano alsa-utils bluez bluez-utils pulseaudio-bluetooth pulseaudio-alsa pass zip cups gutenprint sxiv xorg-xrandr numlockx calcurse zsh virtualbox neomutt git-lfs biber imagemagick dash
 #sudo pacman -S --needed "$(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))"
 
 read -rp "packages installed..."
@@ -37,22 +37,22 @@ sudo localectl --no-convert set-x11-keymap gb
 read -rp "Adding git account details..."
 git config --global user.email "ray@perfectcast.co.uk"
 git config --global user.name "Ray Garner"
-read -rp "Generating ssh key..."
-ssh-keygen -t rsa -b 4096 -C "ray@perfectcast.co.uk"
-eval "$(ssh-agent -s)"
-read -rp "Adding ssh key to agent..."
-cd /home/ray/.ssh || exit
-ssh-add id_rsa
-read -rp "Generating copy key script..."
-echo "#!/bin/sh" > copy.sh
-echo "xclip -sel clip < id_rsa.pub" >> copy.sh
-chmod +x copy.sh
+#read -rp "Generating ssh key..."
+#ssh-keygen -t rsa -b 4096 -C "ray@perfectcast.co.uk"
+#eval "$(ssh-agent -s)"
+#read -rp "Adding ssh key to agent..."
+#cd /home/ray/.ssh || exit
+#ssh-add id_rsa
+#read -rp "Generating copy key script..."
+#echo "#!/bin/sh" > copy.sh
+#echo "xclip -sel clip < id_rsa.pub" >> copy.sh
+#chmod +x copy.sh
 cd /home/ray || exit
 
 #set up pass
-gpg --full-generate-key
-KEY="$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | sed 's/rsa2048\///g')"
-pass init "$KEY"
+#gpg --full-generate-key
+#KEY="$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | sed 's/rsa2048\///g')"
+#pass init "$KEY"
 
 #download wallpaper
 read -rp "Downloading wallpaper..."
@@ -86,12 +86,12 @@ git clone https://github.com/raygarner/latex.git
 cd /home/ray
 
 #set up neomutt config
-read -rp "Downloading neomutt files..."
-cd /home/ray/.config || exit
-git clone https://github.com/raygarner/neomutt_config.git mutt
-cd mutt || exit
-git checkout --track origin/new_stuff
-cd /home/ray || exit
+#read -rp "Downloading neomutt files..."
+#cd /home/ray/.config || exit
+#git clone https://github.com/raygarner/neomutt_config.git mutt
+#cd mutt || exit
+#git checkout --track origin/new_stuff
+#cd /home/ray || exit
 
 #set shell
 chsh -s /bin/zsh
@@ -178,6 +178,10 @@ read -rp "Building yay..."
 cd yay || exit
 makepkg -si
 cd /home/ray/builds || exit
+
+#install xbindkeys
+read -rp "installing xbindkeys..."
+yay -S xbindkeys
 
 #install reaper
 read -rp "installing reaper..."
