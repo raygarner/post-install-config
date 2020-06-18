@@ -55,8 +55,8 @@ cd /home/ray || exit
 #pass init "$KEY"
 
 #download wallpaper
-read -rp "Downloading wallpaper..."
-git clone https://github.com/raygarner/wallpaper.git /home/ray/media/pics/papes/
+#read -rp "Downloading wallpaper..."
+#git clone https://github.com/raygarner/wallpaper.git /home/ray/media/pics/papes/
 
 #download dotfiles
 read -rp "Downloading dotfiles..."
@@ -196,8 +196,8 @@ read -rp "installing urlview..."
 yay -S urlview
 
 #install mutt wizard
-read -rp "installing mutwizard..."
-yay -S mutt-wizard-git
+#read -rp "installing mutwizard..."
+#yay -S mutt-wizard-git
 
 #download and build scid
 #read -rp "Downloading scid..."
@@ -321,31 +321,31 @@ read -rp "Configuring pulseaudio for bluetooth compatability..."
 sudo chfn -f "Ray Garner" ray
 
 #add passwords
-read -rp "Insert passwords..."
-pass insert mutt-wizard-ray
-pass insert mutt-wizard-psyrg4
-pass insert general
-pass insert paypal.com
-pass insert psyrg4_db
-pass insert ftp.perfectcast.com
+#read -rp "Insert passwords..."
+#pass insert mutt-wizard-ray
+#pass insert mutt-wizard-psyrg4
+#pass insert general
+#pass insert paypal.com
+#pass insert psyrg4_db
+#pass insert ftp.perfectcast.com
 
 #set default image viewer
-read -rp "Setting default image viewer..."
-xdg-mime default sxiv.desktop image/jpg
-xdg-mime default sxiv.desktop image/jpeg
-xdg-mime default sxiv.desktop image/png
+#read -rp "Setting default image viewer..."
+#xdg-mime default sxiv.desktop image/jpg
+#xdg-mime default sxiv.desktop image/jpeg
+#xdg-mime default sxiv.desktop image/png
 
 #relink /bin/sh
 read -rp "Relinking /bin/sh to dash..."
 sudo ln -sfT dash /usr/bin/sh
 
 #block ads and trackers
-cd /home/ray || exit
+#cd /home/ray || exit
 #curl https://raw.githubusercontent.com/LukeSmithxyz/etc/master/ips > ips
 #sudo cat ips >> /etc/hosts
-git clone https://github.com/raygarner/hosts.git
-cd hosts || exit
-sudo cat hosts >> /etc/hosts
+#git clone https://github.com/raygarner/hosts.git
+#cd hosts || exit
+#sudo cat hosts >> /etc/hosts
 
 echo "End of script."
 echo "You should now reboot."
